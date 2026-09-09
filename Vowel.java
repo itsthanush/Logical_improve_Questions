@@ -1,18 +1,32 @@
 import java.util.*;
-
-public class Vowel {
+public class Vowel
+{
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
+        String s="take you forward is awesome";
 
-        String s=sc.next();
+        int vowels=0;
+        int consonants=0;
+        int white_space=0;
 
-        int count=0;
-        for(char ch: s.toCharArray()){
-            if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u'){
-                count++;
+
+
+        for(int i=0;i<s.length();i++){
+            char ch=Character.toLowerCase(s.charAt(i));
+            if(ch=='a'|| ch=='e' || ch=='i' || ch=='o' || ch=='u'){
+                vowels++;
+            }
+
+            if (ch >= 'a' && ch <= 'z' &&
+                    ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u'){
+                consonants++;
+            }
+            if(ch==' '){
+                white_space++;
             }
         }
+        System.out.println(vowels);
+        System.out.println(consonants);
+        System.out.println(white_space);
 
-        System.out.print(count);
     }
 }
